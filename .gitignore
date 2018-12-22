@@ -18,3 +18,4 @@ build/
 !Gemfile.lock
 *.crt
 .idea/
+*xcworkspace/xcuserdata/*
