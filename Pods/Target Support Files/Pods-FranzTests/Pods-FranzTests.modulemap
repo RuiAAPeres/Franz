@@ -1,6 +1,0 @@
-module Pods_FranzTests {
-  umbrella header "Pods-FranzTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
