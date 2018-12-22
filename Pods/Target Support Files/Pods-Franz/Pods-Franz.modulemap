@@ -1,0 +1,6 @@
+module Pods_Franz {
+  umbrella header "Pods-Franz-umbrella.h"
+
+  export *
+  module * { export * }
+}
