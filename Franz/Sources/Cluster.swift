@@ -21,7 +21,7 @@ final class Cluster<Message, Topic: Equatable> {
     public func makeConsumer(
         for topic: Topic,
         with interval: DispatchTimeInterval = .seconds(1),
-        scheduler: DateScheduler = QueueScheduler()
+        on scheduler: DateScheduler = QueueScheduler()
         ) -> Signal<Message, NoError> {
 
         let byTopic: (Tagged) -> Bool = second >>> (topic |> curry(==))
