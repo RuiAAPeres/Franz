@@ -22,14 +22,13 @@ final class Cluster<Message, Topic: Equatable> {
         for topic: Topic,
         with interval: DispatchTimeInterval = .seconds(1),
         on scheduler: DateScheduler = QueueScheduler()
-        ) -> Signal<Message, NoError> {
+        ) -> Signal<[Message], NoError> {
 
         let byTopic: (Tagged) -> Bool = second >>> (topic |> curry(==))
 
         return cache
             .filter(byTopic)
             .collect(every: interval, on: scheduler, discardWhenCompleted: false)
-            .flatten()
-            .map(first)
+            .map(first |> map)
     }
 }
