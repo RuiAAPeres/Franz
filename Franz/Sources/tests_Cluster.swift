@@ -12,7 +12,7 @@ class ClusterTests: XCTestCase {
         var counter = 0
 
         consumer.observeValues { value in
-            XCTAssert(value == "Hello1")
+            XCTAssert(value == ["Hello1"])
             counter += 1
         }
 
